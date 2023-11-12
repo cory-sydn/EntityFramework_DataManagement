@@ -1,0 +1,95 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.centered {
+    height: contain;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.centered_section {
+    height: contain;
+    min-height: calc(100vh - 300px);
+    width: calc(100vw - 100px);
+    display: grid;
+    place-content: center;
+}
+
+/***         LOGIN         ****/
+.login_input {
+    width: 100%;
+    min-width: 250px;
+    margin-bottom: 12px;
+    padding-left: 6px;
+    background: #69797E69;
+    color: whitesmoke;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.core_container {
+    display: flex;
+    background: #69797E69;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #32452399;
+    border-radius: 4px;
+    padding: 44px 52px;
+}
+
+.btnlogin {
+    padding: 2px 32px;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+    .btnlogin:hover {
+        font-weight: 500;
+    }
+
+.label_left {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 21px;
+}
+
+/**   */
+
+.uploader {
+    width: 250px;
+    margin-bottom: 12px;
+    padding-left: 6px;
+    background: #fff0d199;
+}
+
+
+/**
+    dataManager
+*/
+.dataRows {
+    background: #3c3939;
+    color: aliceblue;
+}

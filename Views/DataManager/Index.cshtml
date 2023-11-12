@@ -1,0 +1,238 @@
+﻿@model IEnumerable<ExcelToMSSQL.Models.TblContact>
+
+@{
+    Layout = "_Layout";
+}
+
+
+<title> Data Management App</title>
+
+<div class="text-center">
+    <div class="centered">
+        <br />
+        <br />
+        <div class="centered_section">
+            @*{
+            if (["DataManagement.Session"] == null)
+            }*@
+            <div class="core_container">
+                <h2>Data Management</h2>
+                <br />
+                <form asp-controller="DataManager" asp-action="Index" method="post" enctype="multipart/form-data">
+                    <p>Excel File Upload</p>
+                    @ViewData["Title"]
+                    <input type="file" name="postedFile" id="uploader" class="uploader" alt="Choose an Excel File" />
+                    <br /><br />
+                    <input type="submit" value="Yükle"/>
+                    <p>                    
+                        @ViewData["message"]                    
+                    </p>
+                </form>
+                @if (Model != null)
+                {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InsertedDate)
+                                </th>                               
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ListId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FileNo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Dealer)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SalesChannel)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Debitor)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NationalID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TelephoneNum)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Address)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Guarantor)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GuarantorNID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GuarantorPhoneNum)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GuarantorAddress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GrossDebt)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PaidAmount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UnpaidAmount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DueDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PaymentDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DelayDaysCount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PaymentStatus)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SourceOfFinance)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PayorBank)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CollectingAgent)
+                                </th>                               
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CallId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CallStatus)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RcMain)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RcSub)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LastCallDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LastCallAgentID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AppointDate)
+                                </th>                               
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PromisedDate)
+                                </th>                               
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>                         
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.InsertedDate)
+                                    </td>                                  
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ListId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FileNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Dealer)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SalesChannel)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Debitor)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NationalID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TelephoneNum)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Address)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Guarantor)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GuarantorNID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GuarantorPhoneNum)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GuarantorAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GrossDebt)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PaidAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UnpaidAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DueDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PaymentDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DelayDaysCount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PaymentStatus)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SourceOfFinance)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PayorBank)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CollectingAgent)
+                                    </td>                                   
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CallId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CallStatus)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RcMain)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RcSub)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastCallDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastCallAgentID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AppointDate)
+                                    </td>                                
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PromisedDate)
+                                    </td>                                   
+                  
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>
